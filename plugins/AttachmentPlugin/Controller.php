@@ -102,7 +102,7 @@ class AttachmentPlugin_Controller
                 $status .= new CommonPlugin_ImageTag('attach.png', $this->i18n->get('file exists'));
             }
 
-            if (!$row['mid']) {
+            if ($row['mid']) {
                 $status .= new CommonPlugin_ImageTag('email.png', $this->i18n->get('message exists'));
                 $select = '';
             } else {
