@@ -43,20 +43,20 @@ END;
 ?>
 
 <div>
-	<hr>
-	<a name='top'> </a>
+    <hr>
+    <a name='top'> </a>
 <?php echo $toolbar; ?>
-	<div>
+    <div>
 <?php if (isset($deleteResult)):
     echo $deleteResult; ?>
     <br>
 <?php endif; ?>
 <?php echo $message; ?>
-	</div>
-	<div style='padding-top: 10px;' >
-		<form name='<?php echo $formName; ?>' id='<?php echo $formName; ?>' method='post' action='<?php echo htmlspecialchars($action); ?>' >
+    </div>
+    <div style='padding-top: 10px;' >
+        <form name='<?php echo $formName; ?>' id='<?php echo $formName; ?>' method='post' action='<?php echo htmlspecialchars($action); ?>' >
 <?php echo $listing; ?>
-		</form>
-	</div>
-	<p><a href='#top'>[<?php echo $this->i18n->get('top'); ?>]</p>
+        </form>
+    </div>
+    <p><a href='#top'>[<?php echo $this->i18n->get('top'); ?>]</p>
 </div>

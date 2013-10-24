@@ -16,23 +16,23 @@
  */
 
 /*
- *	Important - this file must be saved in ISO-8859-1 encoding
+ *    Important - this file must be saved in ISO-8859-1 encoding
  *
  */
 
 $lan = array(
-//	view.tpl.php
-	'plugin_title' => 'Greffons pièces jointes',
-//	Controller.php
-	'Deleted %d attachments' => 'Pièces jointes %d supprimées',
-	'Attachment repository is %s' => 'Le dossier des pièces jointes est %s',
-	'file name' => 'Fichier',
-	'description' => 'Description',
-	'msg id' => 'Message',
-	'subject' => 'Sujet',
-	'status' => 'Statut',
-	'file exists' => 'Le fichier existe',
-	'message exists' => 'Le message existe',
-	'Select' => 'Sélectionner',
-	'confirm_prompt' => 'Souhaitez-vous vraiment supprimer la pièce jointe sélectionnée ?'
+//    view.tpl.php
+    'plugin_title' => 'Greffons pièces jointes',
+//    Controller.php
+    'Deleted %d attachments' => 'Pièces jointes %d supprimées',
+    'Attachment repository is %s' => 'Le dossier des pièces jointes est %s',
+    'file name' => 'Fichier',
+    'description' => 'Description',
+    'msg id' => 'Message',
+    'subject' => 'Sujet',
+    'status' => 'Statut',
+    'file exists' => 'Le fichier existe',
+    'message exists' => 'Le message existe',
+    'Select' => 'Sélectionner',
+    'confirm_prompt' => 'Souhaitez-vous vraiment supprimer la pièce jointe sélectionnée ?'
 );

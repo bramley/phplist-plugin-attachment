@@ -22,7 +22,7 @@ class AttachmentPlugin extends phplistPlugin
     /*
      *  Inherited variables
      */
-	public $name = 'Manage Attachments';
+    public $name = 'Manage Attachments';
     public $enabled = true;
     public $authors = 'Duncan Cameron';
     public $description = 'Delete unused attachments';
