@@ -2,7 +2,8 @@
 
 ## Description ##
 
-The plugin allows you to delete attachments that are no longer used.
+The plugin provides a page that lists attachments and allows you to delete those that are no longer used.
+The page is added to the System menu.
 
 ## Installation ##
 
@@ -34,4 +35,4 @@ This should contain
 
     version     Description
     2013-10-18  Initial version for phplist 3.0 converted from 2.10 version
-    2013-10-24  Added to GitHub
+    2013-10-25  Added to GitHub
