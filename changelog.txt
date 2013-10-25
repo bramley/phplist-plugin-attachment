@@ -1,5 +1,5 @@
-version 2013-10-24
-      Initial release for GitHub
+version 2013-10-25
+      Plugin converted from 2.10.x version
 
 version 2013-10-18
-    Initial commit
+      Initial commit
