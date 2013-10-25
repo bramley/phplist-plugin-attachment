@@ -40,7 +40,7 @@ class AttachmentPlugin extends phplistPlugin
  
     public function __construct()
     {
-        $this->coderoot = dirname(__FILE__) . '/AttachmentPlugin/';
+        $this->coderoot = dirname(__FILE__) . '/' . __CLASS__ . '/';
         $this->version = (is_file($f = $this->coderoot . self::VERSION_FILE))
             ? file_get_contents($f)
             : '';
