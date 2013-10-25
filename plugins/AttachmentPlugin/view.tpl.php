@@ -29,7 +29,7 @@ $pagefooter[basename(__FILE__)] = <<<END
 $(document).ready(function() {
     $(".button").unbind('click');
     $(".button").click(function() {
-        if ($('#attachments:checked').length == 0) {
+        if ($('#$checkBoxId:checked').length == 0) {
             alert('Please select at least one checkbox');
             return false;
         }
