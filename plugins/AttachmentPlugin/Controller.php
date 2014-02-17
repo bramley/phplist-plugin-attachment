@@ -21,7 +21,7 @@ class AttachmentPlugin_Controller
 {
     const PLUGIN = 'AttachmentPlugin';
     const FORMNAME = 'AttachmentPluginForm';
-    const CHECKBOXNAME = 'attachments';
+    const CHECKBOXID = 'attachments';
 
     private $model;
     private $repository;
@@ -53,8 +53,9 @@ class AttachmentPlugin_Controller
             'toolbar' => $toolbar->display(),
             'action' => new CommonPlugin_PageURL(null, array('action' => 'delete')),
             'message' => $this->i18n->get('Attachment repository is %s', $this->repository),
-            'confirm_prompt' => $this->i18n->get('confirm_prompt')
-        );
+            'confirm_prompt' => $this->i18n->get('confirm_prompt'),
+            'checkBoxId' => self::CHECKBOXID
+      );
 
         if (isset($_SESSION[self::PLUGIN]['deleteResult'])) {
             $params['deleteResult'] = $_SESSION[self::PLUGIN]['deleteResult'];
@@ -84,7 +85,7 @@ class AttachmentPlugin_Controller
          */
         $w->setTitle($this->i18n->get('ID'));
         $showDelete = false;
-        $checkBoxName = sprintf('%s[]', self::CHECKBOXNAME);
+        $checkBoxName = sprintf('%s[]', self::CHECKBOXID);
 
         foreach ($this->model->attachments($start, $limit) as $row) {
             $key = $row['id'];
