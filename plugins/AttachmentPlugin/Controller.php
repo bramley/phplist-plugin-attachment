@@ -21,8 +21,7 @@ class AttachmentPlugin_Controller
 {
     const PLUGIN = 'AttachmentPlugin';
     const FORMNAME = 'AttachmentPluginForm';
-    const CHECKBOXNAME = 'attachments[]';
-    const CHECKBOXID = 'attachments';
+    const CHECKBOXNAME = 'attachments';
 
     private $model;
     private $repository;
@@ -54,8 +53,7 @@ class AttachmentPlugin_Controller
             'toolbar' => $toolbar->display(),
             'action' => new CommonPlugin_PageURL(null, array('action' => 'delete')),
             'message' => $this->i18n->get('Attachment repository is %s', $this->repository),
-            'confirm_prompt' => $this->i18n->get('confirm_prompt'),
-            'checkBoxId' => self::CHECKBOXID
+            'confirm_prompt' => $this->i18n->get('confirm_prompt')
         );
 
         if (isset($_SESSION[self::PLUGIN]['deleteResult'])) {
@@ -86,6 +84,7 @@ class AttachmentPlugin_Controller
          */
         $w->setTitle($this->i18n->get('ID'));
         $showDelete = false;
+        $checkBoxName = sprintf('%s[]', self::CHECKBOXNAME);
 
         foreach ($this->model->attachments($start, $limit) as $row) {
             $key = $row['id'];
@@ -107,7 +106,7 @@ class AttachmentPlugin_Controller
                 $status .= new CommonPlugin_ImageTag('email.png', $this->i18n->get('message exists'));
                 $select = '';
             } else {
-                $select = CHtml::checkBox(self::CHECKBOXNAME, false, array('value' => $key, 'uncheckValue' => 0));
+                $select = CHtml::checkBox($checkBoxName, false, array('value' => $key, 'uncheckValue' => 0));
                 $showDelete = true;
             }
             $w->addColumnHtml($key, $this->i18n->get('status'), $status);
