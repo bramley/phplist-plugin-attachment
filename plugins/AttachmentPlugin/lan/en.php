@@ -21,6 +21,7 @@ $lan = array(
 //    Controller.php
     'Deleted %d attachments' => 'Deleted %d attachments',
     'Attachment repository is %s' => 'Attachment repository is %s',
+    'Attachments' => 'Attachments',
     'file name' => 'File',
     'mime type' => 'MIME type',
     'size' => 'size',
