@@ -83,7 +83,7 @@ class AttachmentPlugin_Controller
         /*
          * Populates the webbler list with attachment details
          */
-        $w->setTitle($this->i18n->get('ID'));
+        $w->setTitle($this->i18n->get('Attachments'));
         $showDelete = false;
         $checkBoxName = sprintf('%s[]', self::CHECKBOXID);
 
