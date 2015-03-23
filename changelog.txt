@@ -1,3 +1,6 @@
+version 2015-03-23
+      Change to autoload approach
+
 version 2013-10-25
       Plugin converted from 2.10.x version
 
