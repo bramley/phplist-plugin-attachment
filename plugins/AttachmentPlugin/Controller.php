@@ -28,7 +28,7 @@ class AttachmentPlugin_Controller
 
     protected function actionDelete()
     {
-        $this->logger->logDebug(print_r($_POST, true));
+        $this->logger->debug(print_r($_POST, true));
         $this->normalise($_POST);
         $this->model->setProperties($_POST);
 

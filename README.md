@@ -46,6 +46,7 @@ This plugin is free but if you install and find it useful then a donation to sup
 ## Version history ##
 
     version     Description
+    2.0.1+20150817  Fix for failure when deleting an attachment
     2.0.0+20150816  Added dependencies
     2015-03-23      Change to autoload approach
     2013-10-25      Added to GitHub
