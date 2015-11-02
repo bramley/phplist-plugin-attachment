@@ -7,7 +7,7 @@
  * @category  phplist
  * @package   AttachmentPlugin
  * @author    Duncan Cameron
- * @copyright 2012-2013 Duncan Cameron
+ * @copyright 2012-2015 Duncan Cameron
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
  */
 
@@ -95,8 +95,10 @@ class AttachmentPlugin_Controller
             $w->addColumn($key, $this->i18n->get('size'), $row['size']);
             $w->addRow($key, $this->i18n->get('description'), $row['description']);
             $w->addRow($key, $this->i18n->get('remotefile'), $row['remotefile']);
-            $w->addColumn($key, $this->i18n->get('msg id'), $row['messageid']);
-            $w->addColumn($key, $this->i18n->get('subject'), $row['subject']);
+
+            if ($row['messageid']) {
+                $w->addRow($key, $this->i18n->get('campaign'), "{$row['messageid']} | {$row['subject']}");
+            }
             $status = '';
 
             if (is_file($this->repository . '/' . $row['filename'])) {

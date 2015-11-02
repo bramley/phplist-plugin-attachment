@@ -7,7 +7,7 @@
  * @category  phplist
  * @package   AttachmentPlugin
  * @author    Duncan Cameron
- * @copyright 2012-2013 Duncan Cameron
+ * @copyright 2012-2015 Duncan Cameron
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
  */
 
@@ -27,11 +27,10 @@ $lan = array(
     'size' => 'size',
     'description' => 'Description',
     'remotefile' => 'Remote file',
-    'msg id' => 'Message',
-    'subject' => 'Subject',
+    'campaign' => 'Campaign',
     'status' => 'Status',
     'file exists' => 'File exists',
-    'message exists' => 'Message exists',
+    'message exists' => 'Campaign exists',
     'Select' => 'Select',
     'confirm_prompt' => 'Are you sure that you want to delete the selected attachments?'
 );
