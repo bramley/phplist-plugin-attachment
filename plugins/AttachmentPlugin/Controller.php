@@ -1,11 +1,12 @@
-<?php 
+<?php
+
 /**
- * AttachmentPlugin for phplist
+ * AttachmentPlugin for phplist.
  * 
  * This file is a part of AttachmentPlugin.
  *
  * @category  phplist
- * @package   AttachmentPlugin
+ *
  * @author    Duncan Cameron
  * @copyright 2012-2015 Duncan Cameron
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
@@ -13,7 +14,7 @@
 
 /**
  * This class is the controller for the plugin providing the action methods
- * Implements the IPopulator interface
+ * Implements the IPopulator interface.
  */
 class AttachmentPlugin_Controller
     extends CommonPlugin_Controller
@@ -33,7 +34,7 @@ class AttachmentPlugin_Controller
         $this->model->setProperties($_POST);
 
         $count = $this->model->deleteAttachments($this->repository);
-        $_SESSION[self::PLUGIN]['deleteResult'] = ($count > 0 )
+        $_SESSION[self::PLUGIN]['deleteResult'] = ($count > 0)
             ? $this->i18n->get('Deleted %d attachments', $count)
             : $this->i18n->get('No attachments selected to delete');
 
@@ -54,7 +55,7 @@ class AttachmentPlugin_Controller
             'action' => new CommonPlugin_PageURL(null, array('action' => 'delete')),
             'message' => $this->i18n->get('Attachment repository is %s', $this->repository),
             'confirm_prompt' => $this->i18n->get('confirm_prompt'),
-            'checkBoxId' => self::CHECKBOXID
+            'checkBoxId' => self::CHECKBOXID,
       );
 
         if (isset($_SESSION[self::PLUGIN]['deleteResult'])) {
@@ -117,7 +118,7 @@ class AttachmentPlugin_Controller
         }
 
         if ($showDelete) {
-             $w->addButton('Delete selected', "javascript::;"); 
+            $w->addButton('Delete selected', 'javascript::;');
         }
     }
 

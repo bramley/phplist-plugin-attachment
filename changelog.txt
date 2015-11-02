@@ -1,3 +1,8 @@
+version 2.1.0+20151102
+      Display campaign details on separate row
+      Updated copyright year
+      Coding standards changes
+
 version 2.0.1+20150817
       Correct log method
 

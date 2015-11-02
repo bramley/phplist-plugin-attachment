@@ -1,20 +1,19 @@
 <?php
 /**
- * AttachmentPlugin for phplist
+ * AttachmentPlugin for phplist.
  * 
  * This file is a part of AttachmentPlugin.
  *
  * @category  phplist
- * @package   AttachmentPlugin
+ *
  * @author    Duncan Cameron
  * @copyright 2012-2015 Duncan Cameron
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
  */
 
 /**
- * This file holds the English text
+ * This file holds the English text.
  */
-
 $lan = array(
 //    view.tpl.php
     'plugin_title' => 'Attachment Plugin',
@@ -32,5 +31,5 @@ $lan = array(
     'file exists' => 'File exists',
     'message exists' => 'Campaign exists',
     'Select' => 'Select',
-    'confirm_prompt' => 'Are you sure that you want to delete the selected attachments?'
+    'confirm_prompt' => 'Are you sure that you want to delete the selected attachments?',
 );
