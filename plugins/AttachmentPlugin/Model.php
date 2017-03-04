@@ -1,7 +1,7 @@
 <?php
 /**
  * AttachmentPlugin for phplist.
- * 
+ *
  * This file is a part of AttachmentPlugin.
  *
  * @category  phplist
@@ -29,6 +29,7 @@ class AttachmentPlugin_Model extends CommonPlugin_Model
     );
     protected $persist = array(
     );
+
     /*
      *    Private methods
      */

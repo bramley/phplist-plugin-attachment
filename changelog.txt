@@ -1,3 +1,9 @@
+version 2.1.1+20170304
+      Put controller class into namespace.
+      Add pageaction page to be used for phplist help.
+      Rename cs config file
+      Coding standards changes
+
 version 2.1.0+20151102
       Display campaign details on separate row
       Updated copyright year

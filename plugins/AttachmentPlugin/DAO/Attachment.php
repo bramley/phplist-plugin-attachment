@@ -1,7 +1,7 @@
 <?php
 /**
  * AttachmentPlugin for phplist.
- * 
+ *
  * This file is a part of AttachmentPlugin.
  *
  * @category  phplist
@@ -19,7 +19,7 @@ class AttachmentPlugin_DAO_Attachment extends CommonPlugin_DAO
     public function attachments($start, $limit)
     {
         /*
-         * 
+         *
          */
         $sql =
             "SELECT a.*, ma.messageid, m.subject, m.id as mid
@@ -44,7 +44,7 @@ class AttachmentPlugin_DAO_Attachment extends CommonPlugin_DAO
     public function attachment($attachmentId)
     {
         /*
-         * 
+         *
          */
         $sql =
             "SELECT *
@@ -53,10 +53,11 @@ class AttachmentPlugin_DAO_Attachment extends CommonPlugin_DAO
 
         return $this->dbCommand->queryRow($sql);
     }
+
     public function deleteAttachments(array $attachmentIds)
     {
         /*
-         * 
+         *
          */
         if (count($attachmentIds) == 0) {
             return 0;

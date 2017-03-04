@@ -4,7 +4,7 @@ namespace phpList\plugin\AttachmentPlugin;
 
 /**
  * AttachmentPlugin for phplist.
- * 
+ *
  * This file is a part of AttachmentPlugin.
  *
  * @category  phplist
@@ -18,9 +18,7 @@ namespace phpList\plugin\AttachmentPlugin;
  * This class is the controller for the plugin providing the action methods
  * Implements the IPopulator interface.
  */
-class Controller
-    extends \CommonPlugin_Controller
-    implements \CommonPlugin_IPopulator
+class Controller extends \CommonPlugin_Controller implements \CommonPlugin_IPopulator
 {
     const PLUGIN = 'AttachmentPlugin';
     const FORMNAME = 'AttachmentPluginForm';
@@ -65,8 +63,9 @@ class Controller
             unset($_SESSION[self::PLUGIN]['deleteResult']);
         }
 
-        print $this->render(dirname(__FILE__) . '/view.tpl.php', $params);
+        echo $this->render(dirname(__FILE__) . '/view.tpl.php', $params);
     }
+
     /*
      *    Public methods
      */
@@ -78,6 +77,7 @@ class Controller
         $this->model = new \AttachmentPlugin_Model(new \CommonPlugin_DB());
         $this->repository = $attachment_repository;
     }
+
     /*
      * Implementation of CommonPlugin_IPopulator
      */

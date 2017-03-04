@@ -1,7 +1,7 @@
 <?php
 /**
  * AttachmentPlugin for phplist.
- * 
+ *
  * This file is a part of AttachmentPlugin.
  *
  * @category  phplist
