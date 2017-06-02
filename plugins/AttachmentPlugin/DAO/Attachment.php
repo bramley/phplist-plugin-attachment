@@ -11,10 +11,14 @@
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
  */
 
+namespace phpList\plugin\AttachmentPlugin\DAO;
+
+use phpList\plugin\Common;
+
 /**
  * DAO class that provides access to the attachment and related tables.
  */
-class AttachmentPlugin_DAO_Attachment extends CommonPlugin_DAO
+class Attachment extends Common\DAO
 {
     public function attachments($start, $limit)
     {

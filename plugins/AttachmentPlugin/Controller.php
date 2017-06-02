@@ -1,7 +1,4 @@
 <?php
-
-namespace phpList\plugin\AttachmentPlugin;
-
 /**
  * AttachmentPlugin for phplist.
  *
@@ -14,11 +11,21 @@ namespace phpList\plugin\AttachmentPlugin;
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
  */
 
+namespace phpList\plugin\AttachmentPlugin;
+
+use CHtml;
+use phpList\plugin\Common\DB;
+use phpList\plugin\Common\ImageTag;
+use phpList\plugin\Common\IPopulator;
+use phpList\plugin\Common\Listing;
+use phpList\plugin\Common\PageURL;
+use phpList\plugin\Common\Toolbar;
+
 /**
  * This class is the controller for the plugin providing the action methods
  * Implements the IPopulator interface.
  */
-class Controller extends \CommonPlugin_Controller implements \CommonPlugin_IPopulator
+class Controller extends \phpList\plugin\Common\Controller implements IPopulator
 {
     const PLUGIN = 'AttachmentPlugin';
     const FORMNAME = 'AttachmentPluginForm';
@@ -38,21 +45,21 @@ class Controller extends \CommonPlugin_Controller implements \CommonPlugin_IPopu
             ? $this->i18n->get('Deleted %d attachments', $count)
             : $this->i18n->get('No attachments selected to delete');
 
-        $redirect = new \CommonPlugin_PageURL(null, array());
+        $redirect = new PageURL(null, array());
         header("Location: $redirect");
         exit;
     }
 
     protected function actionDefault()
     {
-        $toolbar = new \CommonPlugin_Toolbar($this);
+        $toolbar = new Toolbar($this);
         $toolbar->addHelpButton('attachment');
-        $listing = new \CommonPlugin_Listing($this, $this);
+        $listing = new Listing($this, $this);
         $params = array(
             'formName' => self::FORMNAME,
             'listing' => $listing->display(),
             'toolbar' => $toolbar->display(),
-            'action' => new \CommonPlugin_PageURL(null, array('action' => 'delete')),
+            'action' => new PageURL(null, array('action' => 'delete')),
             'message' => $this->i18n->get('Attachment repository is %s', $this->repository),
             'confirm_prompt' => $this->i18n->get('confirm_prompt'),
             'checkBoxId' => self::CHECKBOXID,
@@ -74,7 +81,7 @@ class Controller extends \CommonPlugin_Controller implements \CommonPlugin_IPopu
         global $attachment_repository;
 
         parent::__construct();
-        $this->model = new \AttachmentPlugin_Model(new \CommonPlugin_DB());
+        $this->model = new Model(new DB());
         $this->repository = $attachment_repository;
     }
 
@@ -105,14 +112,14 @@ class Controller extends \CommonPlugin_Controller implements \CommonPlugin_IPopu
             $status = '';
 
             if (is_file($this->repository . '/' . $row['filename'])) {
-                $status .= new \CommonPlugin_ImageTag('attach.png', $this->i18n->get('file exists'));
+                $status .= new ImageTag('attach.png', $this->i18n->get('file exists'));
             }
 
             if ($row['mid']) {
-                $status .= new \CommonPlugin_ImageTag('email.png', $this->i18n->get('message exists'));
+                $status .= new ImageTag('email.png', $this->i18n->get('message exists'));
                 $select = '';
             } else {
-                $select = \Chtml::checkBox($checkBoxName, false, array('value' => $key, 'uncheckValue' => 0));
+                $select = CHtml::checkBox($checkBoxName, false, array('value' => $key, 'uncheckValue' => 0));
                 $showDelete = true;
             }
             $w->addColumnHtml($key, $this->i18n->get('status'), $status);

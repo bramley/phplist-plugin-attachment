@@ -20,4 +20,4 @@ if (!(phplistPlugin::isEnabled('CommonPlugin'))) {
     return;
 }
 
-CommonPlugin_Main::run();
+phpList\plugin\Common\Main::run();

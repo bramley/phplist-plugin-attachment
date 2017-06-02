@@ -15,10 +15,14 @@
  * This page and class are used to display the phplist help dialog.
  */
 
-class AttachmentPlugin_PageactionController extends CommonPlugin_Controller
+namespace phpList\plugin\AttachmentPlugin;
+
+use phpList\plugin\Common;
+
+class PageactionController extends Common\Controller
 {
 }
 
-$controller = new AttachmentPlugin_PageactionController();
+$controller = new PageactionController();
 $action = isset($_GET['action']) ? $_GET['action'] : null;
 $controller->run($action);

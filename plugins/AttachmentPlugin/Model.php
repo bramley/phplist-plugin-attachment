@@ -11,10 +11,14 @@
  * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License, Version 3
  */
 
+namespace phpList\plugin\AttachmentPlugin;
+
+use phpList\plugin\Common;
+
 /**
  * This class holds the fields entered on the Attachment form.
  */
-class AttachmentPlugin_Model extends CommonPlugin_Model
+class Model extends Common\Model
 {
     /*
      *    private variables
@@ -39,7 +43,7 @@ class AttachmentPlugin_Model extends CommonPlugin_Model
     public function __construct($db)
     {
         parent::__construct('AttachmentPlugin');
-        $this->dao = new AttachmentPlugin_DAO_Attachment($db);
+        $this->dao = new DAO\Attachment($db);
     }
 
     public function attachments($start, $limit)
