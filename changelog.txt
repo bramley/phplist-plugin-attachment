@@ -1,3 +1,10 @@
+version 2.2.0+20170603
+      Use namespaces throughout.
+      Inject dependencies.
+      Restructure controller to use dao.
+      Update required versions of php and Common Plugin.
+      Update copyright year.
+
 version 2.1.1+20170304
       Put controller class into namespace.
       Add pageaction page to be used for phplist help.

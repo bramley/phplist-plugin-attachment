@@ -46,6 +46,7 @@ This plugin is free but if you install and find it useful then a donation to sup
 ## Version history ##
 
     version     Description
+    2.2.0+20170603  Internal code changes
     2.1.1+20170304  Use core phplist help dialog
     2.1.0+20151102  Display campaign details on separate row
     2.0.1+20150817  Fix for failure when deleting an attachment
