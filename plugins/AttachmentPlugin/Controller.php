@@ -14,7 +14,6 @@
 namespace phpList\plugin\AttachmentPlugin;
 
 use CHtml;
-use phpList\plugin\Common\DB;
 use phpList\plugin\Common\ImageTag;
 use phpList\plugin\Common\IPopulator;
 use phpList\plugin\Common\Listing;
@@ -31,8 +30,26 @@ class Controller extends \phpList\plugin\Common\Controller implements IPopulator
     const FORMNAME = 'AttachmentPluginForm';
     const CHECKBOXID = 'attachments';
 
+    private $dao;
     private $model;
     private $repository;
+
+    private function deleteAttachments($repository)
+    {
+        foreach ($this->model->attachments as $attachId) {
+            $attachment = $this->dao->attachment($attachId);
+            /*
+             * Delete attachment and shadow file with no extension
+             */
+            foreach (array($attachment['filename'], pathinfo($attachment['filename'], PATHINFO_FILENAME)) as $f) {
+                if (is_file($file = $repository . '/' . $f)) {
+                    unlink($file);
+                }
+            }
+        }
+
+        return $this->dao->deleteAttachments($this->model->attachments);
+    }
 
     protected function actionDelete()
     {
@@ -40,12 +57,12 @@ class Controller extends \phpList\plugin\Common\Controller implements IPopulator
         $this->normalise($_POST);
         $this->model->setProperties($_POST);
 
-        $count = $this->model->deleteAttachments($this->repository);
+        $count = $this->deleteAttachments($this->repository);
         $_SESSION[self::PLUGIN]['deleteResult'] = ($count > 0)
             ? $this->i18n->get('Deleted %d attachments', $count)
             : $this->i18n->get('No attachments selected to delete');
 
-        $redirect = new PageURL(null, array());
+        $redirect = new PageURL();
         header("Location: $redirect");
         exit;
     }
@@ -76,12 +93,13 @@ class Controller extends \phpList\plugin\Common\Controller implements IPopulator
     /*
      *    Public methods
      */
-    public function __construct()
+    public function __construct(Model $model, DAO\Attachment $dao)
     {
         global $attachment_repository;
 
         parent::__construct();
-        $this->model = new Model(new DB());
+        $this->model = $model;
+        $this->dao = $dao;
         $this->repository = $attachment_repository;
     }
 
@@ -97,7 +115,7 @@ class Controller extends \phpList\plugin\Common\Controller implements IPopulator
         $showDelete = false;
         $checkBoxName = sprintf('%s[]', self::CHECKBOXID);
 
-        foreach ($this->model->attachments($start, $limit) as $row) {
+        foreach ($this->dao->attachments($start, $limit) as $row) {
             $key = $row['id'];
             $w->addElement($key);
             $w->addColumn($key, $this->i18n->get('file name'), $row['filename']);
@@ -133,6 +151,6 @@ class Controller extends \phpList\plugin\Common\Controller implements IPopulator
 
     public function total()
     {
-        return $this->model->totalAttachments();
+        return $this->dao->totalAttachments();
     }
 }

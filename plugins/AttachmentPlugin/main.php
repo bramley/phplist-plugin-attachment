@@ -20,4 +20,4 @@ if (!(phplistPlugin::isEnabled('CommonPlugin'))) {
     return;
 }
 
-phpList\plugin\Common\Main::run();
+phpList\plugin\Common\Main::run(new phpList\plugin\AttachmentPlugin\ControllerFactory());

@@ -9,9 +9,9 @@ The page is added to the System menu.
 
 ### Dependencies ###
 
-Requires php version 5.3 or later.
+Requires php version 5.4 or later.
 
-Requires the Common Plugin version 3 to be installed. You should install or upgrade to the latest version.
+Requires the Common Plugin version 3.6.3 or later to be installed. You should install or upgrade to the latest version.
 
 See <https://github.com/bramley/phplist-plugin-common>
 
