@@ -42,7 +42,7 @@ class Attachment extends Common\DAO
             "SELECT count(*) as t
             FROM {$this->tables['attachment']} AS a";
 
-        return $this->dbCommand->queryOne($sql, 't');
+        return $this->dbCommand->queryOne($sql);
     }
 
     public function attachment($attachmentId)
