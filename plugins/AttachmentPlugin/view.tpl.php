@@ -19,7 +19,7 @@
  * - message: location of the attachment directory
  * - files: array of files in the attachment directory
  * - help: help link
- * - listing: CommonPlugin_Listing
+ * - listing: phpList\plugin\Common\Listing
  */
 global $pagefooter;
 

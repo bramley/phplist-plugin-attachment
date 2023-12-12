@@ -104,7 +104,7 @@ class Controller extends \phpList\plugin\Common\Controller implements IPopulator
     }
 
     /*
-     * Implementation of CommonPlugin_IPopulator
+     * Implementation of phpList\plugin\Common\IPopulator
      */
     public function populate(\WebblerListing $w, $start, $limit)
     {
