@@ -22,9 +22,6 @@ class Attachment extends Common\DAO
 {
     public function attachments($start, $limit)
     {
-        /*
-         *
-         */
         $sql =
             "SELECT a.*, ma.messageid, m.subject, m.id as mid
             FROM {$this->tables['attachment']} AS a
@@ -47,9 +44,6 @@ class Attachment extends Common\DAO
 
     public function attachment($attachmentId)
     {
-        /*
-         *
-         */
         $sql =
             "SELECT *
             FROM {$this->tables['attachment']}
@@ -60,9 +54,6 @@ class Attachment extends Common\DAO
 
     public function deleteAttachments(array $attachmentIds)
     {
-        /*
-         *
-         */
         if (count($attachmentIds) == 0) {
             return 0;
         }

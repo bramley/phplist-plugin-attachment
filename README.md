@@ -22,7 +22,7 @@ The benefit of this is that plugins will not be affected when you upgrade phplis
 ### Install through phplist ###
 Install on the Plugins page (menu Config > Plugins) using the package URL `https://github.com/bramley/phplist-plugin-attachment/archive/master.zip`.
 
-In phplist releases 3.0.5 and earlier there is a bug that can cause a plugin to be incompletely installed on some configurations (<https://mantis.phplist.com/view.php?id=16865>). 
+In phplist releases 3.0.5 and earlier there is a bug that can cause a plugin to be incompletely installed on some configurations (<https://mantis.phplist.com/view.php?id=16865>).
 Check that these files are in the plugin directory. If not then you will need to install manually. The bug has been fixed in release 3.0.6.
 
 * the file AttachmentPlugin.php
@@ -46,6 +46,7 @@ This plugin is free but if you install and find it useful then a donation to sup
 ## Version history ##
 
     version     Description
+    2.2.1+20231212  Minor internal changes
     2.2.0+20170603  Internal code changes
     2.1.1+20170304  Use core phplist help dialog
     2.1.0+20151102  Display campaign details on separate row

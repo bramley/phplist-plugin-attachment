@@ -1,3 +1,9 @@
+version 2.2.1+20231212
+      Fix .gitignore
+      Remove unnecessary parameter to queryOne()
+      Use namespaced names for Common plugin classes instead of PEAR names
+      CS fixer update
+
 version 2.2.0+20170603
       Use namespaces throughout.
       Inject dependencies.
